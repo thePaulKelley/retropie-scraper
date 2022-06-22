@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<gameList>
+	<provider>
+		<System>Super Nintendo</System>
+		<software>Skraper</software>
+		<database>kotlol.com</database>
+		<web>http://www.kotlol.com</web>
+	</provider>
+	<game>
+		<path>./Super Mario World 2 - Yoshi's Island (USA, Asia) (Rev 1).zip</path>
+		<name>Super Mario World 2: Yoshi's Island</name>
+		<desc>For Testing Purposes.</desc>
+		<image>./boxart/Super Mario World 2 - Yoshi's Island (USA, Asia) (Rev 1).jpg</image>
+		<video>./snaps/Super Mario World 2 - Yoshi's Island (USA, Asia) (Rev 1).mp4</video>
+		<rating>0.95</rating>
+		<releasedate>19951004T000000</releasedate>
+		<developer>Nintendo</developer>
+		<publisher>Nintendo</publisher>
+		<genre>Platform</genre>
+	</game>
+	<game id="1234" source="KOTLOL.com">
+		<path>./Uncharted Waters (USA).zip</path>
+		<name>Uncharted Waters</name>
+		<desc>For Testing Purposes.</desc>
+		<rating>0.55</rating>
+		<releasedate>19930102T000000</releasedate>
+		<developer>Koei</developer>
+		<publisher>Koei</publisher>
+		<genre>Role playing games</genre>
+		<players>1</players>
+		<hash>95724A2F</hash>
+		<image>./boxart/Uncharted Waters (USA).jpg</image>
+		<video>./snaps/Uncharted Waters (USA).mp4</video>
+	</game>
+
+</gameList>
