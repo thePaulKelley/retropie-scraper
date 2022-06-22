@@ -15,7 +15,7 @@ def scrap_gamelist(roms_folder):
     # create an empty dataframe to hold the gamelist results
     game_df = pd.DataFrame()
     # create a catchall list for everything that didn't make it
-    skipped = []
+    skip_list = []
 
     # loop through directories and extract out the game metadata and add it to the main dataframe
     for dir in dirs:
@@ -39,6 +39,9 @@ def scrap_gamelist(roms_folder):
 
         except:
             # add skipped folders to the skip array
-            skipped.append(dir)
+            skip_list.append(dir)
 
-    return game_df, skipped
+    game_list = game_df.to_dict(orient='records')
+
+    scrap_result = {'game_list': game_list, 'skip_list': skip_list}
+    return scrap_result
