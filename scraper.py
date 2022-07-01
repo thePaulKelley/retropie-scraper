@@ -58,6 +58,7 @@ class RetroPieScraper:
     def __init__(self, roms_folder):
         self.roms_folder = roms_folder
         self.skip_list = []
+        self.game_list = []
         self.game_table = pd.DataFrame()
 
     def _run_scraper(self):
@@ -67,11 +68,16 @@ class RetroPieScraper:
         self.skip_list = results['skip_list']
         return results['game_list']
 
+    def create_game_list(self):
+        self.game_list = self._run_scraper()
+        l_size = len(self.game_list)
+        return f'Created game_list with {l_size} items'
+
     def create_game_table(self):
         df = pd.DataFrame(self._run_scraper())
         self.game_table = df
         shape = df.shape
-        return f'Create game_table with (rows, columns): {shape}'
+        return f'Created game_table with following rows, columns: {shape}'
 
     def save_game_table(self, target='game_list.csv'):
         # Exports game_table as a csv.
