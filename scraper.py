@@ -1,6 +1,7 @@
 import os
 import xmltodict
 import pandas as pd
+import uuid
 
 
 def scrap_gamelist(roms_folder):
@@ -61,20 +62,18 @@ class RetroPieScraper:
         self.game_list = []
         self.game_table = pd.DataFrame()
 
-    def _run_scraper(self):
+    def scrape_games(self):
         # run the scraper internally. Meant to update the skip_list automatically but to save compute costs the results
         # need to be used/stored by the function that calls this
         results = scrap_gamelist(self.roms_folder)
         self.skip_list = results['skip_list']
-        return results['game_list']
-
-    def create_game_list(self):
-        self.game_list = self._run_scraper()
-        l_size = len(self.game_list)
-        return f'Created game_list with {l_size} items'
+        self.game_list = results['game_list']
+        g_size = len(self.game_list)
+        s_size = len(self.skip_list)
+        return f'Created game_list with {g_size} items, {s_size} skipped'
 
     def create_game_table(self):
-        df = pd.DataFrame(self._run_scraper())
+        df = pd.DataFrame(self.game_list)
         self.game_table = df
         shape = df.shape
         return f'Created game_table with following rows, columns: {shape}'
@@ -83,3 +82,18 @@ class RetroPieScraper:
         # Exports game_table as a csv.
         self.game_table.to_csv(target)
         return f'game_table saved to {target}'
+
+    def copy_boxart(self):
+        # check if there is a table
+        if self.game_table.shape == (0, 0):
+            return 'game_table is empty'
+        # loop through every item, check if there is a boxart registered
+        for i, game in enumerate(self.game_list):
+            iuuid = uuid.uuid1()
+
+            # create uuid for the item
+            # if so copy to the target /image folder
+            # create the image dhash
+            # when complete store the uuid & dhash
+
+        pass
