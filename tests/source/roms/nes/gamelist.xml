@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<gameList>
+	<provider>
+		<System>NES</System>
+		<software>Skraper</software>
+		<database>KOTLOL.com</database>
+		<web>http://www.KOTLOL.com</web>
+	</provider>
+	<game id="4321" source="KOTLOL.com">
+		<path>./Metal Gear (USA).zip</path>
+		<name>Metal Gear</name>
+		<desc>Sample description</desc>
+		<rating>0.75</rating>
+		<releasedate>19880602T000000</releasedate>
+		<developer>Konami</developer>
+		<publisher>Konami</publisher>
+		<genre>Action</genre>
+		<players>1</players>
+		<hash>F0E48ABE</hash>
+		<image>./boxart/Metal Gear (USA).jpg</image>
+		<video>./snaps/Metal Gear (USA).mp4</video>
+	</game>
+	<game>
+		<path>./Rad Racer (USA).zip</path>
+		<name>Rad Racer</name>
+		<desc>Sample description</desc>
+		<image>./boxart/Rad Racer (USA).jpg</image>
+		<video>./snaps/Rad Racer (USA).mp4</video>
+		<rating>0.7</rating>
+		<releasedate>19871001T000000</releasedate>
+		<developer>Square</developer>
+		<publisher>Sega</publisher>
+		<genre>Racing</genre>
+	</game>
+	<game>
+		<path>./Snake Rattle n Roll (USA).zip</path>
+		<name>Snake, Rattle 'n Roll</name>
+		<desc>Sample description</desc>
+		<image>./boxart/Snake Rattle n Roll (USA).jpg</image>
+		<video>./snaps/Snake Rattle n Roll (USA).mp4</video>
+		<rating>0.8</rating>
+		<releasedate>19900701T000000</releasedate>
+		<developer>Rare, Ltd.</developer>
+		<publisher>Nintendo</publisher>
+		<genre>Action</genre>
+		<players>1-2</players>
+	</game>
+</gameList>
