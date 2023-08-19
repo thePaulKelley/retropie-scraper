@@ -29,7 +29,7 @@ def scrape_rom_folder(roms_folder):
     return main_list
 
 
-def get_rom_metadata(roms_folder='~/RetroPie/roms/', json_file = 'rom_metadata.json'):
+def get_rom_metadata(roms_folder='/home/pi/RetroPie/roms/', json_file = 'rom_metadata.json'):
     """ Runs the scrape_roms_folder and export out JSON"""
 
     rom_metadata = scrape_rom_folder(roms_folder)
