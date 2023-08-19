@@ -1,5 +1,6 @@
 from pathlib import Path
 import xmltodict
+import json
 
 
 def scrape_rom_folder(roms_folder):
@@ -26,3 +27,16 @@ def scrape_rom_folder(roms_folder):
             main_list['errors'].append([str(game_list), str(e)])
 
     return main_list
+
+
+def get_rom_metadata(roms_folder='~/RetroPie/roms/', json_file = 'rom_metadata.json'):
+    """ Runs the scrape_roms_folder and export out JSON"""
+
+    rom_metadata = scrape_rom_folder(roms_folder)
+
+    # Serializing json
+    json_meta = json.dumps(rom_metadata)
+
+    # Write it out
+    with open(json_file, 'w') as outfile:
+        outfile.write(json_meta)
