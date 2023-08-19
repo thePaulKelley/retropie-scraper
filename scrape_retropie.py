@@ -35,7 +35,7 @@ def get_rom_metadata(roms_folder='/home/pi/RetroPie/roms/', json_file = 'rom_met
     rom_metadata = scrape_rom_folder(roms_folder)
 
     # Serializing json
-    json_meta = json.dumps(rom_metadata)
+    json_meta = json.dumps(rom_metadata, indent=4)
 
     # Write it out
     with open(json_file, 'w') as outfile:
